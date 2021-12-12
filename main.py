@@ -1,11 +1,13 @@
 defPath = "E:\documents E\python\AdventOfCode\inputs//"
 
+
 def readFile(path, mode):
     f = open(path, mode)
     inputs = f.read()
     f.close()
     inputs = inputs.replace("\n", " ")
     return inputs
+
 
 def readFileLine(path, mode):
     f = open(path, mode)
@@ -14,6 +16,7 @@ def readFileLine(path, mode):
     for i in range(len(inputs)):
         inputs[i] = inputs[i].replace("\n", "")
     return inputs
+
 
 def splitText(string, separator):
     liste = string.split(separator)

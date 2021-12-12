@@ -31,11 +31,9 @@ gammaDec = int(gamma, 2)
 epsilonDec = int(epsilon, 2)
 print("gamma =", gamma, "=", gammaDec)
 print("epsilon =", epsilon, "=", epsilonDec)
-print("resultat = ", gammaDec*epsilonDec)
-
+print("resultat = ", gammaDec * epsilonDec)
 
 print("")
-
 
 # partie 2
 
@@ -51,7 +49,6 @@ inputs2D = [[inputs[i][j] for j in range(len(inputs[0]))] for i in range(len(inp
 # Compte le nombre d'itération de '1' puis compare avec le nombre de ligne
 # En deduit le bit de gamma correspondant
 
-#print("nombre de valeurs", len(o2list))
 
 # recherche de o2
 for j in range(len(inputs2D[0])):
@@ -65,17 +62,13 @@ for j in range(len(inputs2D[0])):
         val = 1
     else:
         val = 0
-        iteration = len(list)-iteration
+        iteration = len(list) - iteration
 
     for i in range(len(list)):
         if list[i][j] == str(val):
             o2list.append(list[i])
     if len(o2list) == 1:
         break
-
-    #print("bit majoritaire :", val, "avec", iteration, 'iterations  | ', "nombre de valeurs", len(o2list))
-#print("-------------------------------")
-
 
 # Recherche de co2
 for j in range(len(inputs2D[0])):
@@ -89,7 +82,7 @@ for j in range(len(inputs2D[0])):
         val = 0
     else:
         val = 1
-        iteration = len(list)-iteration
+        iteration = len(list) - iteration
 
     for i in range(len(list)):
         if list[i][j] == str(val):
@@ -97,9 +90,8 @@ for j in range(len(inputs2D[0])):
     if len(co2list) == 1:
         break
 
-    #print("bit minoritaire :", val, "avec", iteration, 'iterations  | ', "nombre de valeurs", len(co2list))
-
+    # print("bit minoritaire :", val, "avec", iteration, 'iterations  | ', "nombre de valeurs", len(co2list))
 
 print("oxygen generator rating :", o2list[0], "=", int(o2list[0], 2))
 print("CO2 scrubber rating :", co2list[0], "=", int(co2list[0], 2))
-print("resultat =", int(o2list[0], 2)*int(co2list[0], 2))
+print("resultat =", int(o2list[0], 2) * int(co2list[0], 2))
