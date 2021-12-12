@@ -7,6 +7,13 @@ def readFile(path, mode):
     inputs = inputs.replace("\n", " ")
     return inputs
 
+def readFileLine(path, mode):
+    f = open(path, mode)
+    inputs = f.readlines()
+    f.close()
+    for i in range(len(inputs)):
+        inputs[i] = inputs[i].replace("\n", "")
+    return inputs
 
 def splitText(string, separator):
     liste = string.split(separator)
