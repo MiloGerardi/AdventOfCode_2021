@@ -91,6 +91,7 @@ print('')
 # Partie 2
 
 print("Partie 2")
+print("Calcul...")
 
 boards = boards2
 nums = []
@@ -104,6 +105,10 @@ while len(boards)!=1:
         except :
             break
     tirage+=1
+tirage-=1
+while winVerif(nums, boards[0])==False:
+    nums.append(initialNums[tirage])
+    tirage+=1
 
 for n in range(len(nums)):
     for r in range(5):
@@ -115,8 +120,8 @@ boardSum = 0
 for r in range(5):
     for c in range(5):
         boardSum += int(boards[0][r][c])
-print(boards)
-print(boardSum)
+
+print("Board sum :", boardSum)
 lastNum=nums[len(nums)-1]
-print(nums)
-print(19*325)
+print("Last number drawn :", lastNum)
+print("Puzzlz answer :", int(lastNum)*boardSum)
