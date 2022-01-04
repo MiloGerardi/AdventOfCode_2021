@@ -96,6 +96,8 @@ print("Calcul...")
 boards = boards2
 nums = []
 tirage=0
+# Tire un numero et teste toutes les boards
+# Supprime les gagnantes à chaque fois
 while len(boards)!=1:
     nums.append(initialNums[tirage])
     for i in range(len(boards)):
@@ -105,17 +107,20 @@ while len(boards)!=1:
         except :
             break
     tirage+=1
+# boards ne contient plus que la dernière board
 tirage-=1
+# Continue le tirage jusqu'à que la dernière board gagne
 while winVerif(nums, boards[0])==False:
     nums.append(initialNums[tirage])
     tirage+=1
-
+# Remplace les numeros gagnants par 0
 for n in range(len(nums)):
     for r in range(5):
         for c in range(5):
             if boards[0][r][c] == nums[n]:
                 boards[0][r][c] = '0'
 
+# Fait la somme de la board
 boardSum = 0
 for r in range(5):
     for c in range(5):
